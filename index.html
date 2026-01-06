@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voltra Techno - Technology & Robotics Innovation</title>
+  
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="Voltra Techno creates cutting-edge technological and robotic products. Explore our innovative lineup of Electronics, IoT Devices & Robotics.">
+  <meta name="keywords" content="robotics, technology, IoT, electronics, custom PCB, 3D design, programming, innovation">
+  <meta name="author" content="Voltra Techno">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+  
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-container">
+      <div class="loading-logo">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">Loading<span class="loading-dots">...</span></span>
+      </div>
+    </div>
+  </div>
+  
+  <header>
+    <div class="logo-container">
+      <img src="logo-voltra.jpg" alt="Voltra Techno Logo" />
+      <div class="rotating-light"></div>
+    </div>
+
+    <h1 class="electric-title">
+      <span>V</span><span>O</span><span>L</span><span>T</span><span>R</span><span>A</span>
+      &nbsp;
+      <span>T</span><span>E</span><span>C</span><span>H</span><span>N</span><span>O</span>
+    </h1>
+
+    <nav>
+      <a href="#products"><i class="fas fa-robot"></i> Products</a>
+      <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Intro Section -->
+    <section class="intro" id="about">
+      <h2>Innovating the Future of Technology & Robotics</h2>
+      <p>
+        Voltra Techno is dedicated to creating cutting-edge technological and robotic products
+        that shape a smarter, more connected world. Explore our innovative lineup designed to empower your life and work.
+      </p>
+    </section>
+
+    <!-- Products Section dengan tata letak baru -->
+    <section class="products-section" id="products">
+      <div class="main-products-container">
+        
+        <!-- Bagian Produk (Kiri) - 6 Produk -->
+        <div class="main-product-section">
+          <div class="main-product-header">
+            <h2><i class="fas fa-robot"></i> Electronics, IoT Device & Robotic</h2>
+            <button class="all-variants-btn" id="viewAllVariants">View All Products</button>
+          </div>
+          
+          <div class="variants-grid">
+            <!-- Product 1 -->
+            <div class="variant-card" data-variant="lf-dead-race">
+              <img src="LF DEAD RACE.jpg" alt="LF Dead Race" class="variant-image">
+              <h3 class="variant-name">LF Dead Race</h3>
+              <ul class="variant-specs">
+                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 80 km/h</li>
+                <li><i class="fas fa-bolt"></i> Daya: 250W</li>
+                <li><i class="fas fa-weight"></i> Berat: 1.2 kg</li>
+                <li><i class="fas fa-star"></i> Desain kuat & respons cepat</li>
+              </ul>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="variant-card" data-variant="battle-sumo">
+              <img src="THE BATTLE SUMO ROBOT.jpg" alt="The Battle Sumo Robot" class="variant-image">
+              <h3 class="variant-name">The Battle Sumo Robot</h3>
+              <ul class="variant-specs">
+                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 60 km/h</li>
+                <li><i class="fas fa-bolt"></i> Daya: 300W</li>
+                <li><i class="fas fa-weight"></i> Berat: 1.5 kg</li>
+                <li><i class="fas fa-star"></i> Robot sumo dengan tenaga dorong kuat</li>
+              </ul>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="variant-card" data-variant="iot-smart-home">
+              <img src="LF DEAD RACE.jpg" alt="IoT Smart Home System" class="variant-image">
+              <h3 class="variant-name">IoT Smart Home System</h3>
+              <ul class="variant-specs">
+                <li><i class="fas fa-microchip"></i> Processor: ESP32</li>
+                <li><i class="fas fa-wifi"></i> Connectivity: WiFi/BT</li>
+                <li><i class="fas fa-sensor"></i> Sensors: 8 types</li>
+                <li><i class="fas fa-star"></i> Kontrol rumah otomatis lengkap</li>
+              </ul>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="variant-card" data-variant="agri-robot">
+              <img src="THE BATTLE SUMO ROBOT.jpg" alt="Agricultural Robot" class="variant-image">
+              <h3 class="variant-name">Agricultural Robot</h3>
+              <ul class="variant-specs">
+                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 20 km/h</li>
+                <li><i class="fas fa-bolt"></i> Daya: 500W</li>
+                <li><i class="fas fa-weight"></i> Berat: 15 kg</li>
+                <li><i class="fas fa-star"></i> Robot pertanian otomatis</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Deskripsi tambahan -->
+          <div class="product-description">
+            <p>
+              <strong>VOLT PRODUCTION</strong><br>
+              With Electronics & IoT Products, control your home from your phone, 
+              monitor with smart sensors and boost productivity with always connected devices.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Bagian Layanan (Kanan) dengan Programming Software -->
+        <div class="services-section">
+          <div class="services-header">
+            <h2><i class="fas fa-cogs"></i> Our Services</h2>
+          </div>
+          
+          <div class="services-grid">
+            <div class="service-card" data-modal="modal-pcb" data-service="pcb">
+              <div class="service-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <h3>PCB Layout Design</h3>
+              <p>Professional PCB design and prototyping services for your electronic projects</p>
+            </div>
+            
+            <div class="service-card" data-modal="modal-3d" data-service="3d">
+              <div class="service-icon">
+                <i class="fas fa-cube"></i>
+              </div>
+              <h3>3D Design & Modeling</h3>
+              <p>High-quality 3D modeling and design services for prototypes and products</p>
+            </div>
+            
+            <!-- Programming Software Service -->
+            <div class="service-card programming-service" data-modal="modal-programming" data-service="programming">
+              <div class="service-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Programming Software</h3>
+              <p>Custom software development for automation, IoT, and robotics applications</p>
+            </div>
+          </div>
+          
+          <!-- Research & Development Section -->
+          <div class="rnd-section">
+            <div class="rnd-header">
+              <i class="fas fa-flask"></i>
+              <h3>Research & Development</h3>
+            </div>
+            
+            <div class="rnd-content">
+              <p>
+                Professional consultation combined with research & development to create smarter, 
+                innovative, and effective solutions for your needs.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Custom Project & Development Service Section TAMBAHAN -->
+          <div class="custom-project-section">
+            <div class="custom-project-header">
+              <i class="fas fa-project-diagram"></i>
+              <h3>Custom Project & Development Service</h3>
+            </div>
+            
+            <div class="custom-project-content">
+              <p>
+                Custom projects and development services designed to fit your unique needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: voltratechno@gmail.com</p>
+      <p>Phone: +62 831 9487 0553</p>
+      
+      <!-- Quick Action Buttons -->
+      <div class="quick-actions">
+        <button class="quick-action-btn whatsapp" id="contact-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
+        <button class="quick-action-btn gmail" id="contact-gmail">
+          <i class="fas fa-envelope"></i> Gmail
+        </button>
+        <button class="quick-action-btn instagram" id="contact-instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Voltra Techno</h3>
+        <p>Innovating the future through technology and robotics solutions.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <a href="#" class="open-service-modal" data-modal="modal-pcb">PCB Design</a>
+        <a href="#" class="open-service-modal" data-modal="modal-3d">3D Modeling</a>
+        <a href="#" class="open-service-modal" data-modal="modal-programming">Programming</a>
+      </div>
+    </div>
+    <p>&copy; 2025 Voltra Techno. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal 1 - All Products (6 Products) -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><i class="fas fa-robot"></i> All Products (6 Products)</h2>
+      <p>Explore our complete lineup of electronics, IoT devices, and robotics</p>
+      
+      <div class="all-variants-container">
+        <!-- Product 1 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="LF DEAD RACE.jpg" alt="LF Dead Race">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>LF Dead Race</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Kecepatan</span>
+                <span class="spec-value">80 km/h</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Daya</span>
+                <span class="spec-value">250W</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Berat</span>
+                <span class="spec-value">1.2 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">Desain kuat, respons cepat, dan stabil</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Robot balap berkecepatan tinggi dengan kontrol presisi untuk kompetisi dan eksperimen.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="THE BATTLE SUMO ROBOT.jpg" alt="The Battle Sumo Robot">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>The Battle Sumo Robot</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Kecepatan</span>
+                <span class="spec-value">60 km/h</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Daya</span>
+                <span class="spec-value">300W</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Berat</span>
+                <span class="spec-value">1.5 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">Tenaga dorong kuat, sensor canggih</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Robot sumo kompetisi dengan kemampuan mendorong yang luar biasa dan sistem sensor yang akurat.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="LF DEAD RACE.jpg" alt="IoT Smart Home System">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>IoT Smart Home System</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Processor</span>
+                <span class="spec-value">ESP32</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Connectivity</span>
+                <span class="spec-value">WiFi/Bluetooth</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Sensors</span>
+                <span class="spec-value">8 types</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">Kontrol rumah otomatis lengkap</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Sistem smart home IoT yang dapat mengontrol seluruh perangkat rumah melalui smartphone.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="THE BATTLE SUMO ROBOT.jpg" alt="Agricultural Robot">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>Agricultural Robot</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Kecepatan</span>
+                <span class="spec-value">20 km/h</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Daya</span>
+                <span class="spec-value">500W</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Berat</span>
+                <span class="spec-value">15 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">Robot pertanian otomatis</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Robot pertanian yang dapat membantu dalam proses penanaman, pemeliharaan, dan panen secara otomatis.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Product 5 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="LF DEAD RACE.jpg" alt="Drone Surveillance">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>Drone Surveillance</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Jangkauan</span>
+                <span class="spec-value">2 km</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Baterai</span>
+                <span class="spec-value">30 menit</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Kamera</span>
+                <span class="spec-value">4K HD</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">GPS, Auto Return, Follow Mode</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Drone dengan kamera 4K untuk surveilans, pemetaan, dan monitoring area.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Product 6 -->
+        <div class="variant-detail">
+          <div class="variant-detail-image">
+            <img src="THE BATTLE SUMO ROBOT.jpg" alt="Smart Robot Arm">
+          </div>
+          <div class="variant-detail-specs">
+            <h3>Smart Robot Arm</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Jangkauan</span>
+                <span class="spec-value">60 cm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Beban Maks</span>
+                <span class="spec-value">2 kg</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Presisi</span>
+                <span class="spec-value">0.1 mm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Fitur</span>
+                <span class="spec-value">6 axis, programmable, AI vision</span>
+              </div>
+            </div>
+            <p class="variant-description">
+              Lengan robot cerdas dengan 6 sumbu gerak untuk aplikasi industri, pendidikan, dan penelitian.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-note">
+        <p><i class="fas fa-info-circle"></i> Total 6 produk tersedia. Hubungi kami untuk informasi lebih lengkap.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal PCB Layout Design -->
+  <div class="modal" id="modal-pcb">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><i class="fas fa-microchip"></i> PCB Layout Design Portfolio</h2>
+      <p>Beberapa contoh desain PCB yang telah kami buat</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="PCB Design 1">
+          <p>Desain PCB untuk sistem robotik</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="PCB Design 2">
+          <p>Desain PCB untuk kontrol motor</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="PCB Design 3">
+          <p>Desain PCB untuk sensor IoT</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="PCB Design 4">
+          <p>Desain PCB untuk power management</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3D Design & Modeling -->
+  <div class="modal" id="modal-3d">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><i class="fas fa-cube"></i> 3D Design & Modeling Portfolio</h2>
+      <p>Beberapa contoh desain 3D yang telah kami buat</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="3D Design 1">
+          <p>Model 3D untuk robot industri</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="3D Design 2">
+          <p>Model 3D untuk housing elektronik</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="3D Design 3">
+          <p>Model 3D untuk komponen mekanik</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="3D Design 4">
+          <p>Model 3D untuk prototipe produk</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Programming Software -->
+  <div class="modal" id="modal-programming">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><i class="fas fa-code"></i> Programming Software Portfolio</h2>
+      <p>Beberapa contoh proyek programming yang telah kami buat</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="Programming 1">
+          <p>Dashboard monitoring IoT</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="Programming 2">
+          <p>Aplikasi kontrol robot via smartphone</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="LF DEAD RACE.jpg" alt="Programming 3">
+          <p>Software untuk analisis data sensor</p>
+        </div>
+        <div class="portfolio-item">
+          <img src="THE BATTLE SUMO ROBOT.jpg" alt="Programming 4">
+          <p>API untuk sistem otomasi industri</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 - Consultation -->
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2><i class="fas fa-headset"></i> Consultation With Research & Development</h2>
+      <p>Contact us through your preferred method</p>
+      
+      <div class="contact-container">
+        <button id="whatsapp-btn" class="contact-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
+        <button id="instagram-btn" class="contact-btn instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </button>
+        <button id="email-btn" class="email-btn">
+          <i class="fas fa-envelope"></i> Email via Gmail
+        </button>
+      </div>
+      
+      <!-- Instagram Instruction -->
+      <div class="instagram-instruction">
+        <h4><i class="fab fa-instagram"></i> Cara DM di Instagram:</h4>
+        <ol class="instruction-steps">
+          <li>Buka aplikasi Instagram di ponsel Anda</li>
+          <li>Cari username: <strong>@voltratechno</strong></li>
+          <li>Kunjungi profil kami</li>
+          <li>Klik tombol <strong>"Message"</strong> (di bagian atas profil)</li>
+          <li>Ketik pesan konsultasi Anda</li>
+        </ol>
+        <button class="copy-username-btn">
+          <i class="fas fa-copy"></i> Salin Username
+        </button>
+        <div class="copy-success">
+          <i class="fas fa-check-circle"></i> Username berhasil disalin!
+        </div>
+      </div>
+      
+      <!-- Email Status -->
+      <div class="email-status" id="email-status">
+        <i class="fas fa-info-circle"></i>
+        <span>Membuka Gmail... Jika tidak terbuka, silakan buka aplikasi Gmail Anda.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    <div class="toast-content">
+      <i class="fas fa-check-circle toast-icon"></i>
+      <span class="toast-message">Message sent successfully!</span>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
