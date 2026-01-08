@@ -2,8 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Ganti viewport dengan yang lebih baik -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Voltra Techno - Technology & Robotics Innovation</title>
+
+  <!-- Untuk iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Voltra Techno">
+
+  <!-- Untuk Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0a1f2c">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/manifest.json">
   
   <!-- Meta tags for SEO -->
   <meta name="description" content="Voltra Techno creates cutting-edge technological and robotic products. Explore our innovative lineup of Electronics, IoT Devices & Robotics.">
@@ -41,7 +54,8 @@
   
   <header>
     <div class="logo-container">
-      <img src="logo-voltra.jpg" alt="Voltra Techno Logo" />
+      <!-- Logo TIDAK pakai lazy loading karena muncul di atas fold -->
+      <img src="logo-voltra.jpg" alt="Voltra Techno Logo" width="200" height="200">
       <div class="rotating-light"></div>
     </div>
 
@@ -81,50 +95,50 @@
           
           <div class="variants-grid">
             <!-- Product 1 -->
-            <div class="variant-card" data-variant="lf-dead-race">
-              <img src="LF DEAD RACE.jpg" alt="LF Dead Race" class="variant-image">
-              <h3 class="variant-name">LF Dead Race</h3>
+            <div class="variant-card" data-variant="Transporter Robot">
+              <img src="Transporter.jpg" alt="Transporter Robot" class="variant-image" loading="lazy" width="800" height="600">
+              <h3 class="variant-name">Transporter Robot</h3>
               <ul class="variant-specs">
-                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 80 km/h</li>
-                <li><i class="fas fa-bolt"></i> Daya: 250W</li>
-                <li><i class="fas fa-weight"></i> Berat: 1.2 kg</li>
+                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 600 Rpm</li>
+                <li><i class="fas fa-bolt"></i> Supply Tegangan: 12 V</li>
+                <li><i class="fas fa-weight"></i> Berat: 2.5 Kg</li>
                 <li><i class="fas fa-star"></i> Desain kuat & respons cepat</li>
               </ul>
             </div>
             
             <!-- Product 2 -->
             <div class="variant-card" data-variant="battle-sumo">
-              <img src="THE BATTLE SUMO ROBOT.jpg" alt="The Battle Sumo Robot" class="variant-image">
+              <img src="Sumo Robot.jpg" alt="The Battle Sumo Robot" class="variant-image" loading="lazy" width="800" height="600">
               <h3 class="variant-name">The Battle Sumo Robot</h3>
               <ul class="variant-specs">
-                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 60 km/h</li>
-                <li><i class="fas fa-bolt"></i> Daya: 300W</li>
-                <li><i class="fas fa-weight"></i> Berat: 1.5 kg</li>
-                <li><i class="fas fa-star"></i> Robot sumo dengan tenaga dorong kuat</li>
+                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 1600 Rpm</li>
+                <li><i class="fas fa-bolt"></i> Supply Tegangan: 12-24 V</li>
+                <li><i class="fas fa-weight"></i> Berat: 3 Kg</li>
+                <li><i class="fas fa-star"></i> Torsi Kuat Siap Diadu</li>
               </ul>
             </div>
             
             <!-- Product 3 -->
-            <div class="variant-card" data-variant="iot-smart-home">
-              <img src="LF DEAD RACE.jpg" alt="IoT Smart Home System" class="variant-image">
-              <h3 class="variant-name">IoT Smart Home System</h3>
+            <div class="variant-card" data-variant="Smart Monitoring Powe">
+              <img src="IOT Projeck.jpg" alt="Smart Monitoring Power" class="variant-image" loading="lazy" width="800" height="600">
+              <h3 class="variant-name">Smart Monitoring Power</h3>
               <ul class="variant-specs">
-                <li><i class="fas fa-microchip"></i> Processor: ESP32</li>
-                <li><i class="fas fa-wifi"></i> Connectivity: WiFi/BT</li>
-                <li><i class="fas fa-sensor"></i> Sensors: 8 types</li>
-                <li><i class="fas fa-star"></i> Kontrol rumah otomatis lengkap</li>
+                <li><i class="fas fa-microchip"></i> Microkontroller: ESP32</li>
+                <li><i class="fas fa-wifi"></i> Connectivity: WiFi</li>
+                <li><i class="fas fa-sensor"></i> IOT: Blynk</li>
+                <li><i class="fas fa-star"></i> Monitoring Arus dan Tegangan</li>
               </ul>
             </div>
             
             <!-- Product 4 -->
-            <div class="variant-card" data-variant="agri-robot">
-              <img src="THE BATTLE SUMO ROBOT.jpg" alt="Agricultural Robot" class="variant-image">
-              <h3 class="variant-name">Agricultural Robot</h3>
+            <div class="variant-card" data-variant="Smart Gas Detector">
+              <img src="Smart Gas Detector.jpg" alt="Smart Gas Detector" class="variant-image" loading="lazy" width="800" height="600">
+              <h3 class="variant-name">Smart Gas Detector</h3>
               <ul class="variant-specs">
-                <li><i class="fas fa-tachometer-alt"></i> Kecepatan: 20 km/h</li>
-                <li><i class="fas fa-bolt"></i> Daya: 500W</li>
-                <li><i class="fas fa-weight"></i> Berat: 15 kg</li>
-                <li><i class="fas fa-star"></i> Robot pertanian otomatis</li>
+                 <li><i class="fas fa-microchip"></i> Microkontroller: ESP32</li>
+                <li><i class="fas fa-wifi"></i> Connectivity: WiFi</li>
+                <li><i class="fas fa-sensor"></i> IOT: Telegram</li>
+                <li><i class="fas fa-star"></i> Sistem Pendeteksi Kebocoran Gas</li>
               </ul>
             </div>
           </div>
@@ -132,7 +146,7 @@
           <!-- Deskripsi tambahan -->
           <div class="product-description">
             <p>
-              <strong>VOLT PRODUCTION</strong><br>
+              <strong>VOLTRA PRODUCTION</strong><br>
               With Electronics & IoT Products, control your home from your phone, 
               monitor with smart sensors and boost productivity with always connected devices.
             </p>
@@ -257,22 +271,22 @@
         <!-- Product 1 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="LF DEAD RACE.jpg" alt="LF Dead Race">
+            <img src="Transporter.jpg" alt="Transporter Robot" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
-            <h3>LF Dead Race</h3>
+            <h3>Transporter Robot</h3>
             <div class="specs-grid">
               <div class="spec-item">
                 <span class="spec-label">Kecepatan</span>
-                <span class="spec-value">80 km/h</span>
+                <span class="spec-value">600 Rpm</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Daya</span>
-                <span class="spec-value">250W</span>
+                <span class="spec-label">Supply Tegangan</span>
+                <span class="spec-value">12 V</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Berat</span>
-                <span class="spec-value">1.2 kg</span>
+                <span class="spec-value">2.5 kg</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
@@ -280,7 +294,7 @@
               </div>
             </div>
             <p class="variant-description">
-              Robot balap berkecepatan tinggi dengan kontrol presisi untuk kompetisi dan eksperimen.
+              Robot kompetisi berkecepatan tinggi dengan kontrol presisi untuk kompetisi dan eksperimen.
             </p>
           </div>
         </div>
@@ -288,30 +302,30 @@
         <!-- Product 2 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="THE BATTLE SUMO ROBOT.jpg" alt="The Battle Sumo Robot">
+            <img src="Sumo Robot.jpg" alt="The Battle Sumo Robot" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
             <h3>The Battle Sumo Robot</h3>
             <div class="specs-grid">
               <div class="spec-item">
                 <span class="spec-label">Kecepatan</span>
-                <span class="spec-value">60 km/h</span>
+                <span class="spec-value">1600 Rpm</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Daya</span>
-                <span class="spec-value">300W</span>
+               <span class="spec-label">Supply Tegangan</span>
+                <span class="spec-value">12-24 V</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Berat</span>
-                <span class="spec-value">1.5 kg</span>
+                <span class="spec-value">3 kg</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
-                <span class="spec-value">Tenaga dorong kuat, sensor canggih</span>
+                <span class="spec-value">Torsi Kuat Siap Diadu</span>
               </div>
             </div>
             <p class="variant-description">
-              Robot sumo kompetisi dengan kemampuan mendorong yang luar biasa dan sistem sensor yang akurat.
+              Robot sumo kompetisi dengan kemampuan mendorong yang luar biasa dengan torsi yang kuat.
             </p>
           </div>
         </div>
@@ -319,30 +333,30 @@
         <!-- Product 3 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="LF DEAD RACE.jpg" alt="IoT Smart Home System">
+            <img src="IOT Projeck.jpg" alt="Smart Monitoring Power" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
-            <h3>IoT Smart Home System</h3>
+            <h3> Smart Monitoring Power</h3>
             <div class="specs-grid">
               <div class="spec-item">
-                <span class="spec-label">Processor</span>
+                <span class="spec-label">Microkontroller</span>
                 <span class="spec-value">ESP32</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Connectivity</span>
-                <span class="spec-value">WiFi/Bluetooth</span>
+                <span class="spec-value">WiFi</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Sensors</span>
-                <span class="spec-value">8 types</span>
+                <span class="spec-label">IOT</span>
+                <span class="spec-value">Blynk</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
-                <span class="spec-value">Kontrol rumah otomatis lengkap</span>
+                <span class="spec-value">Monitoring Arus dan Tegangan</span>
               </div>
             </div>
             <p class="variant-description">
-              Sistem smart home IoT yang dapat mengontrol seluruh perangkat rumah melalui smartphone.
+              Monitoring real-time berbasis IoT menggunakan ESP32 yang terintegrasi dengan Blynk
             </p>
           </div>
         </div>
@@ -350,30 +364,30 @@
         <!-- Product 4 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="THE BATTLE SUMO ROBOT.jpg" alt="Agricultural Robot">
+            <img src="Smart Gas Detector.jpg" alt="Smart Gas Detector" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
-            <h3>Agricultural Robot</h3>
-            <div class="specs-grid">
+            <h3>Smart Gas Detector</h3>
+           <div class="specs-grid">
               <div class="spec-item">
-                <span class="spec-label">Kecepatan</span>
-                <span class="spec-value">20 km/h</span>
+                <span class="spec-label">Microkontroller</span>
+                <span class="spec-value">ESP32</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Daya</span>
-                <span class="spec-value">500W</span>
+                <span class="spec-label">Connectivity</span>
+                <span class="spec-value">WiFi</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Berat</span>
-                <span class="spec-value">15 kg</span>
+                <span class="spec-label">IOT</span>
+                <span class="spec-value">Telegram</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
-                <span class="spec-value">Robot pertanian otomatis</span>
+                <span class="spec-value">Sistem Pendeteksi Kebocoran Gas</span>
               </div>
             </div>
             <p class="variant-description">
-              Robot pertanian yang dapat membantu dalam proses penanaman, pemeliharaan, dan panen secara otomatis.
+              pendeteksi kebocoran gas berbasis IoT peringatan melalui notifikasi Telegram.
             </p>
           </div>
         </div>
@@ -381,30 +395,30 @@
         <!-- Product 5 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="LF DEAD RACE.jpg" alt="Drone Surveillance">
+            <img src="IOT Smart Home Control.jpg" alt="IOT Smart Home Control" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
-            <h3>Drone Surveillance</h3>
-            <div class="specs-grid">
+            <h3>IOT Smart Home Control</h3>
+             <div class="specs-grid">
               <div class="spec-item">
-                <span class="spec-label">Jangkauan</span>
-                <span class="spec-value">2 km</span>
+                <span class="spec-label">Microntroller</span>
+                <span class="spec-value">ESP32</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Baterai</span>
-                <span class="spec-value">30 menit</span>
+                <span class="spec-label">Connectivity</span>
+                <span class="spec-value">WiFi</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Kamera</span>
-                <span class="spec-value">4K HD</span>
+                <span class="spec-label">IOT</span>
+                <span class="spec-value">WEB MQQT</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
-                <span class="spec-value">GPS, Auto Return, Follow Mode</span>
+                <span class="spec-value">IOT Smart Home</span>
               </div>
             </div>
             <p class="variant-description">
-              Drone dengan kamera 4K untuk surveilans, pemetaan, dan monitoring area.
+              Control System Jarak Jauh dengan broker MQQT
             </p>
           </div>
         </div>
@@ -412,30 +426,30 @@
         <!-- Product 6 -->
         <div class="variant-detail">
           <div class="variant-detail-image">
-            <img src="THE BATTLE SUMO ROBOT.jpg" alt="Smart Robot Arm">
+            <img src="Mini Robot Soccer.jpg" alt="Mini Robot Soccer" loading="lazy" width="800" height="600">
           </div>
           <div class="variant-detail-specs">
-            <h3>Smart Robot Arm</h3>
-            <div class="specs-grid">
+            <h3>Mini Robot Soccer</h3>
+             <div class="specs-grid">
               <div class="spec-item">
-                <span class="spec-label">Jangkauan</span>
-                <span class="spec-value">60 cm</span>
+                <span class="spec-label">Kecepatan</span>
+                <span class="spec-value">1000 Rpm</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Beban Maks</span>
-                <span class="spec-value">2 kg</span>
+               <span class="spec-label">Supply Tegangan</span>
+                <span class="spec-value">12 V</span>
               </div>
               <div class="spec-item">
-                <span class="spec-label">Presisi</span>
-                <span class="spec-value">0.1 mm</span>
+                <span class="spec-label">Berat</span>
+                <span class="spec-value">3 kg</span>
               </div>
               <div class="spec-item">
                 <span class="spec-label">Fitur</span>
-                <span class="spec-value">6 axis, programmable, AI vision</span>
+                <span class="spec-value">Lincah Responsif</span>
               </div>
             </div>
             <p class="variant-description">
-              Lengan robot cerdas dengan 6 sumbu gerak untuk aplikasi industri, pendidikan, dan penelitian.
+              Robot soccer dengan kelincahan dan Kontrol Responsif
             </p>
           </div>
         </div>
@@ -456,20 +470,20 @@
       
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="PCB Design 1">
-          <p>Desain PCB untuk sistem robotik</p>
+          <img src="ESP32 SENSOR BOARD IOT.jpeg" alt="PCB Design 1" loading="lazy" width="800" height="600">
+          <p>Esp32 Sensor Board IOT</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="PCB Design 2">
-          <p>Desain PCB untuk kontrol motor</p>
+          <img src="Custom DC Motor Driver 40 V.jpg" alt="PCB Design 2" loading="lazy" width="800" height="600">
+          <p>Custom DC Motor Driver 40 V</p>
         </div>
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="PCB Design 3">
-          <p>Desain PCB untuk sensor IoT</p>
+          <img src="Minimum System Line Follower.jpeg" alt="PCB Design 3" loading="lazy" width="800" height="600">
+          <p>Minimum System Line Follower</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="PCB Design 4">
-          <p>Desain PCB untuk power management</p>
+          <img src="Driver Kontrol Motor AC.jpeg" alt="PCB Design 4" loading="lazy" width="800" height="600">
+          <p>Driver Kontrol Motor AC 1 Phase</p>
         </div>
       </div>
     </div>
@@ -484,20 +498,20 @@
       
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="3D Design 1">
-          <p>Model 3D untuk robot industri</p>
+          <img src="LF DEAD RACE.jpg" alt="3D Design 1" loading="lazy" width="800" height="600">
+          <p> Robot Line Follower</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="3D Design 2">
-          <p>Model 3D untuk housing elektronik</p>
+          <img src="Porto Sumo.jpeg" alt="3D Design 2" loading="lazy" width="800" height="600">
+          <p> Robot Sumo</p>
         </div>
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="3D Design 3">
-          <p>Model 3D untuk komponen mekanik</p>
+          <img src="Lidar Tripot .jpeg" alt="3D Design 3" loading="lazy" width="800" height="600">
+          <p> Lidar Tripot</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="3D Design 4">
-          <p>Model 3D untuk prototipe produk</p>
+          <img src="Prototype Pengisian Air Minum.jpeg" alt="3D Design 4" loading="lazy" width="800" height="600">
+          <p>automatic bottle filler prototype</p>
         </div>
       </div>
     </div>
@@ -512,20 +526,20 @@
       
       <div class="portfolio-grid">
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="Programming 1">
+          <img src="Monitoring Dashboard.jpeg" alt="Programming 1" loading="lazy" width="800" height="600">
           <p>Dashboard monitoring IoT</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="Programming 2">
-          <p>Aplikasi kontrol robot via smartphone</p>
+          <img src="IOT Control Via Blynk.png" alt="Programming 2" loading="lazy" width="800" height="600">
+          <p>IOT Control Via Blynk</p>
         </div>
         <div class="portfolio-item">
-          <img src="LF DEAD RACE.jpg" alt="Programming 3">
-          <p>Software untuk analisis data sensor</p>
+          <img src="IOT Control Via Bot Telegram.png" alt="Programming 3" loading="lazy" width="800" height="600">
+          <p>IOT Control Via Bot Telegram</p>
         </div>
         <div class="portfolio-item">
-          <img src="THE BATTLE SUMO ROBOT.jpg" alt="Programming 4">
-          <p>API untuk sistem otomasi industri</p>
+          <img src="Esp32 Controler Robot Using PS4 Joystick.jpeg" alt="Programming 4" loading="lazy" width="800" height="600">
+          <p>Esp32 Controler Robot Using PS4 Joystick</p>
         </div>
       </div>
     </div>
