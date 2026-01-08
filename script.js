@@ -1,36 +1,47 @@
-// Initialize particles.js
-particlesJS('particles-js', {
-  particles: {
-    number: { value: 80, density: { enable: true, value_area: 800 } },
-    color: { value: "#00e5ff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5, random: true },
-    size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#00e5ff",
-      opacity: 0.2,
-      width: 1
+// Deteksi apakah perangkat mobile
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// Initialize particles.js hanya jika bukan mobile
+if (!isMobile) {
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#00e5ff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5, random: true },
+      size: { value: 3, random: true },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#00e5ff",
+        opacity: 0.2,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
     },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      random: true,
-      straight: false,
-      out_mode: "out",
-      bounce: false
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      }
     }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" }
-    }
+  });
+} else {
+  // Jika mobile, nonaktifkan particles
+  const particlesContainer = document.querySelector('.particles-desktop');
+  if (particlesContainer) {
+    particlesContainer.style.display = 'none';
   }
-});
+}
 
 // DOM Elements
 const loadingScreen = document.getElementById("loadingScreen");
@@ -70,17 +81,25 @@ variantCards.forEach(card => {
   card.addEventListener('click', function() {
     const variant = this.getAttribute('data-variant');
     
-    // Animasi klik
-    gsap.to(this, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1,
-      onComplete: () => {
-        // Buka modal detail produk
+    // Animasi klik yang lebih sederhana untuk mobile
+    if (!isMobile) {
+      gsap.to(this, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1,
+        onComplete: () => {
+          openProductDetail(variant);
+        }
+      });
+    } else {
+      // Untuk mobile, langsung buka tanpa animasi yang berat
+      this.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        this.style.transform = '';
         openProductDetail(variant);
-      }
-    });
+      }, 150);
+    }
   });
 });
 
@@ -88,33 +107,21 @@ variantCards.forEach(card => {
 function openProductDetail(variant) {
   const modal1 = document.getElementById('modal1');
   
-  if (variant === 'lf-dead-race') {
-    // Isi modal dengan detail LF Dead Race
-    modal1.querySelector('h2').innerHTML = '<i class="fas fa-robot"></i> LF Dead Race';
-    modal1.querySelector('p').textContent = 'High-speed racing robot with precision control';
-    
-    // Tampilkan modal
+  if (variant === 'Transporter Robot') {
+    modal1.querySelector('h2').innerHTML = '<i class="fas fa-robot"></i> Transporter Robot';
+    modal1.querySelector('p').textContent = 'High-speed transporter robot with precision control';
     openModal(modal1);
   } else if (variant === 'battle-sumo') {
-    // Isi modal dengan detail Battle Sumo Robot
     modal1.querySelector('h2').innerHTML = '<i class="fas fa-robot"></i> The Battle Sumo Robot';
     modal1.querySelector('p').textContent = 'Competition-grade sumo robot with advanced sensors';
-    
-    // Tampilkan modal
     openModal(modal1);
-  } else if (variant === 'iot-smart-home') {
-    // Isi modal dengan detail IoT Smart Home
-    modal1.querySelector('h2').innerHTML = '<i class="fas fa-home"></i> IoT Smart Home System';
+  } else if (variant === 'Smart Monitoring Powe') {
+    modal1.querySelector('h2').innerHTML = '<i class="fas fa-home"></i> Smart Monitoring Power';
     modal1.querySelector('p').textContent = 'Complete smart home automation system';
-    
-    // Tampilkan modal
     openModal(modal1);
-  } else if (variant === 'agri-robot') {
-    // Isi modal dengan detail Agricultural Robot
-    modal1.querySelector('h2').innerHTML = '<i class="fas fa-tractor"></i> Agricultural Robot';
-    modal1.querySelector('p').textContent = 'Automated farming and agriculture robot';
-    
-    // Tampilkan modal
+  } else if (variant === 'Smart Gas Detector') {
+    modal1.querySelector('h2').innerHTML = '<i class="fas fa-gas-pump"></i> Smart Gas Detector';
+    modal1.querySelector('p').textContent = 'Advanced gas detection system with IoT integration';
     openModal(modal1);
   }
 }
@@ -123,20 +130,24 @@ function openProductDetail(variant) {
 viewAllBtn.addEventListener('click', function() {
   const modal1 = document.getElementById('modal1');
   
-  // Isi modal dengan semua varian
   modal1.querySelector('h2').innerHTML = '<i class="fas fa-robot"></i> All Products (6 Products)';
   modal1.querySelector('p').textContent = 'Explore our complete lineup of electronics, IoT devices, and robotics';
   
-  // Tampilkan modal
   openModal(modal1);
   
-  // Animasi tombol
-  gsap.to(this, {
-    scale: 0.9,
-    duration: 0.1,
-    yoyo: true,
-    repeat: 1
-  });
+  if (!isMobile) {
+    gsap.to(this, {
+      scale: 0.9,
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1
+    });
+  } else {
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      this.style.transform = '';
+    }, 150);
+  }
 });
 
 // Interaksi untuk layanan
@@ -144,20 +155,29 @@ serviceCards.forEach(card => {
   card.addEventListener('click', function() {
     const modalId = this.getAttribute('data-modal');
     
-    // Animasi klik
-    gsap.to(this, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1,
-      onComplete: () => {
-        // Buka modal yang sesuai
+    if (!isMobile) {
+      gsap.to(this, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1,
+        onComplete: () => {
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            openModal(modal);
+          }
+        }
+      });
+    } else {
+      this.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        this.style.transform = '';
         const modal = document.getElementById(modalId);
         if (modal) {
           openModal(modal);
         }
-      }
-    });
+      }, 150);
+    }
   });
 });
 
@@ -166,25 +186,52 @@ function openModal(modal) {
   modal.style.display = "flex";
   document.body.style.overflow = "hidden";
   
-  // Animation
-  gsap.fromTo(modal.querySelector('.modal-content'), 
-    { scale: 0.8, opacity: 0 },
-    { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)" }
-  );
+  // Animation yang berbeda untuk mobile dan desktop
+  if (!isMobile) {
+    gsap.fromTo(modal.querySelector('.modal-content'), 
+      { scale: 0.8, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)" }
+    );
+  } else {
+    // Untuk mobile, gunakan animasi yang lebih sederhana
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.transform = 'translateY(20px)';
+    modalContent.style.opacity = '0';
+    
+    setTimeout(() => {
+      modalContent.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+      modalContent.style.transform = 'translateY(0)';
+      modalContent.style.opacity = '1';
+    }, 10);
+  }
 }
 
 // Fungsi tutup modal
 function closeModal(modal) {
-  gsap.to(modal.querySelector('.modal-content'), {
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.3,
-    ease: "back.in(1.7)",
-    onComplete: () => {
+  if (!isMobile) {
+    gsap.to(modal.querySelector('.modal-content'), {
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.3,
+      ease: "back.in(1.7)",
+      onComplete: () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    });
+  } else {
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.transform = 'translateY(20px)';
+    modalContent.style.opacity = '0';
+    
+    setTimeout(() => {
       modal.style.display = "none";
       document.body.style.overflow = "auto";
-    }
-  });
+      modalContent.style.transform = '';
+      modalContent.style.opacity = '';
+      modalContent.style.transition = '';
+    }, 300);
+  }
 }
 
 // Close modal buttons
@@ -226,7 +273,6 @@ function openGmailWithTemplate(subject, body) {
     emailStatus.classList.add('show');
     emailStatus.innerHTML = '<i class="fas fa-info-circle"></i> <span>Membuka Gmail... Jika tidak terbuka, izinkan popup atau salin email: voltratechno@gmail.com</span>';
     
-    // Sembunyikan status setelah 5 detik
     setTimeout(() => {
       emailStatus.classList.remove('show');
     }, 5000);
@@ -234,7 +280,6 @@ function openGmailWithTemplate(subject, body) {
   
   // Jika popup diblokir, beri alternatif
   if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-    // Alternatif: mailto link
     const mailtoLink = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
     window.location.href = mailtoLink;
   }
@@ -423,64 +468,60 @@ document.addEventListener("keydown", function(e) {
   }
 });
 
-// Auto-typing effect for intro
-const introText = "Innovating the Future of Technology & Robotics";
-let typedIndex = 0;
-const typingSpeed = 50;
-const introTitle = document.querySelector(".intro h2");
+// Auto-typing effect untuk desktop saja
+if (!isMobile) {
+  const introText = "Innovating the Future of Technology & Robotics";
+  let typedIndex = 0;
+  const typingSpeed = 50;
+  const introTitle = document.querySelector(".intro h2");
 
-function typeWriter() {
-  if (typedIndex < introText.length && introTitle) {
-    introTitle.textContent = introText.substring(0, typedIndex + 1);
-    typedIndex++;
-    setTimeout(typeWriter, typingSpeed);
+  function typeWriter() {
+    if (typedIndex < introText.length && introTitle) {
+      introTitle.textContent = introText.substring(0, typedIndex + 1);
+      typedIndex++;
+      setTimeout(typeWriter, typingSpeed);
+    }
   }
+
+  window.addEventListener("load", () => {
+    if (introTitle) {
+      introTitle.textContent = "";
+      setTimeout(typeWriter, 1000);
+    }
+    
+    // Animate logo on load hanya untuk desktop
+    const logoContainer = document.querySelector(".logo-container");
+    if (logoContainer) {
+      gsap.from(logoContainer, {
+        scale: 0,
+        rotation: 360,
+        duration: 1,
+        ease: "back.out(1.7)"
+      });
+    }
+  });
 }
-
-// Start typing effect when page loads
-window.addEventListener("load", () => {
-  if (introTitle) {
-    introTitle.textContent = "";
-    setTimeout(typeWriter, 1000);
-  }
-  
-  // Animate logo on load
-  const logoContainer = document.querySelector(".logo-container");
-  if (logoContainer) {
-    gsap.from(logoContainer, {
-      scale: 0,
-      rotation: 360,
-      duration: 1,
-      ease: "back.out(1.7)"
-    });
-  }
-});
 
 // Instagram Copy Username Functionality
 document.querySelectorAll('.copy-username-btn').forEach(button => {
   button.addEventListener('click', function() {
     const username = '@voltratechno';
     
-    // Copy ke clipboard menggunakan Clipboard API
     navigator.clipboard.writeText(username)
       .then(() => {
-        // Tampilkan feedback sukses
         const successElement = this.nextElementSibling;
         if (successElement && successElement.classList.contains('copy-success')) {
           successElement.classList.add('show');
           
-          // Sembunyikan pesan setelah 3 detik
           setTimeout(() => {
             successElement.classList.remove('show');
           }, 3000);
         }
         
-        // Juga tampilkan toast
         showToast(`Username "${username}" berhasil disalin!`);
       })
       .catch(err => {
         console.error('Gagal menyalin: ', err);
-        // Fallback untuk browser lama
         const textArea = document.createElement('textarea');
         textArea.value = username;
         document.body.appendChild(textArea);
@@ -503,3 +544,270 @@ document.querySelectorAll('.open-service-modal').forEach(link => {
     }
   });
 });
+
+// Optimasi untuk touch events di mobile
+if (isMobile) {
+  // Tambahkan class untuk touch feedback
+  document.querySelectorAll('button, .variant-card, .service-card, .portfolio-item').forEach(element => {
+    element.addEventListener('touchstart', function() {
+      this.classList.add('touch-active');
+    });
+    
+    element.addEventListener('touchend', function() {
+      this.classList.remove('touch-active');
+    });
+  });
+  
+  // Nonaktifkan animasi GSAP yang berat untuk mobile
+  if (typeof gsap !== 'undefined') {
+    gsap.globalTimeline.pause();
+  }
+}
+
+// Optimasi scroll untuk mobile
+let scrollTimeout;
+window.addEventListener('scroll', function() {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(function() {
+    // Reset transform setelah scroll berhenti
+    document.querySelectorAll('.variant-card, .service-card').forEach(card => {
+      card.style.transform = '';
+    });
+  }, 100);
+});
+// ============================================
+// DETEKSI DAN OPTIMASI UNTUK MOBILE PORTRAIT
+// ============================================
+
+// Deteksi orientasi portrait
+function isPortraitMode() {
+  return window.matchMedia("(orientation: portrait)").matches;
+}
+
+// Deteksi mobile device
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Fungsi untuk mengatur viewport height yang benar di mobile
+function setViewportHeight() {
+  // Dapatkan viewport height yang benar
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  
+  // Tambahkan class untuk portrait mode
+  if (isPortraitMode()) {
+    document.body.classList.add('portrait-mode');
+    document.body.classList.remove('landscape-mode');
+  } else {
+    document.body.classList.add('landscape-mode');
+    document.body.classList.remove('portrait-mode');
+  }
+}
+
+// Panggil saat load dan resize
+window.addEventListener('load', setViewportHeight);
+window.addEventListener('resize', setViewportHeight);
+window.addEventListener('orientationchange', function() {
+  setTimeout(setViewportHeight, 100);
+});
+
+// CSS variable untuk vh
+const portraitStyle = document.createElement('style');
+portraitStyle.textContent = `
+  :root {
+    --vh: 1vh;
+  }
+  
+  .modal,
+  .modal-content,
+  .loading-screen {
+    height: calc(var(--vh, 1vh) * 100) !important;
+    max-height: calc(var(--vh, 1vh) * 100) !important;
+  }
+  
+  /* Class untuk portrait mode */
+  .portrait-mode .variants-grid,
+  .portrait-mode .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .portrait-mode .main-products-container {
+    flex-direction: column !important;
+  }
+  
+  .portrait-mode .quick-actions {
+    flex-direction: column !important;
+  }
+`;
+document.head.appendChild(portraitStyle);
+
+// ============================================
+// OPTIMASI PERFORMANSI UNTUK MOBILE PORTRAIT
+// ============================================
+
+// Nonaktifkan particles di mobile portrait untuk performa
+if (isMobileDevice() && isPortraitMode()) {
+  document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles-js');
+    if (particlesContainer) {
+      particlesContainer.style.display = 'none';
+      particlesContainer.innerHTML = '';
+    }
+    
+    // Nonaktifkan GSAP animasi yang berat
+    if (typeof gsap !== 'undefined') {
+      gsap.globalTimeline.pause();
+    }
+  });
+}
+
+// Optimasi gambar loading untuk mobile portrait
+if (isMobileDevice() && isPortraitMode()) {
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    
+    // Lazy loading untuk gambar
+    images.forEach(img => {
+      // Tambahkan loading="lazy" untuk native lazy loading
+      if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+      
+      // Optimasi untuk gambar di viewport
+      if (img.classList.contains('variant-image') || 
+          img.classList.contains('portfolio-item img')) {
+        // Tambahkan placeholder atau low-quality image
+        if (!img.hasAttribute('src')) {
+          img.style.backgroundColor = '#1a3a53';
+          img.style.minHeight = '150px';
+        }
+      }
+    });
+  });
+}
+
+// ============================================
+// FIX UNTUK TOUCH EVENTS DI MOBILE PORTRAIT
+// ============================================
+
+if (isMobileDevice()) {
+  // Fix untuk touch delay
+  document.addEventListener('touchstart', function() {}, {passive: true});
+  
+  // Prevent double-tap zoom
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event) {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+  
+  // Optimasi modal untuk touch
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('touchmove', function(e) {
+      e.stopPropagation();
+    }, {passive: false});
+  });
+}
+
+// ============================================
+// SCROLL SMOOTH UNTUK MOBILE PORTRAIT
+// ============================================
+
+// Smooth scroll yang dioptimasi untuk mobile
+function smoothScrollTo(target, duration = 500) {
+  if (isMobileDevice()) {
+    // Gunakan native smooth scroll untuk mobile
+    target.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  } else {
+    // Fallback untuk desktop
+    const targetPosition = target.offsetTop - 80;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+    
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+    
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    
+    requestAnimationFrame(animation);
+  }
+}
+
+// Update anchor link untuk mobile portrait
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      smoothScrollTo(targetElement);
+    }
+  });
+});
+
+// ============================================
+// LOADING OPTIMIZATION UNTUK MOBILE PORTRAIT
+// ============================================
+
+// Loading screen yang lebih cepat untuk mobile
+if (isMobileDevice() && isPortraitMode()) {
+  window.addEventListener('load', function() {
+    // Sembunyikan loading screen lebih cepat
+    setTimeout(() => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      if (loadingScreen) {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 300);
+      }
+    }, 800); // Lebih cepat dari default 1000ms
+  });
+}
+
+// ============================================
+// FIX UNTUK SAFARI iOS
+// ============================================
+
+// Fix untuk Safari iOS
+if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+  // Fix untuk viewport height di iOS
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fix untuk 100vh di Safari
+    function setFullHeight() {
+      document.documentElement.style.setProperty(
+        '--vh', 
+        `${window.innerHeight * 0.01}px`
+      );
+    }
+    
+    setFullHeight();
+    window.addEventListener('resize', setFullHeight);
+    window.addEventListener('orientationchange', setFullHeight);
+    
+    // Fix untuk sticky header di iOS
+    document.querySelectorAll('header').forEach(header => {
+      header.style.position = '-webkit-sticky';
+    });
+  });
+}
