@@ -409,7 +409,7 @@ Salam,
 
 // Quick Action Buttons di Contact Section
 document.getElementById('contact-whatsapp').addEventListener('click', function() {
-  window.open('https://wa.me/6283194870553?text=Halo%20Voltra%20Techno,%20saya%20ingin%20konsultasi%20tentang%20produk', '_blank');
+  window.open('https://wa.me/6283194870553?text=Halo%20Voltra%20Techno,%20saya%20ingin%20membahas%20tentang%20projek', '_blank');
 });
 
 document.getElementById('contact-gmail').addEventListener('click', function() {
